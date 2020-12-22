@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Config_ModelParamDate] (
+﻿CREATE TABLE [stage].[Config_ModelParamDate] (
     [ModelDate] DATE NOT NULL
 );
 

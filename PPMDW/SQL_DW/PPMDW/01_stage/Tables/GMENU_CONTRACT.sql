@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[GMENU_CONTRACT] (
+﻿CREATE TABLE [stage].[GMENU_CONTRACT] (
     [CONTRACT_CODE]         NUMERIC (5)     NOT NULL,
     [GROWER_CODE]           NUMERIC (5)     NOT NULL,
     [FARM_CODE]             NUMERIC (2)     NOT NULL,

@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Config_PlantParameters] (
+﻿CREATE TABLE [stage].[Config_PlantParameters] (
     [ID]                BIGINT         IDENTITY (1, 1) NOT NULL,
     [PlantCode]         VARCHAR (2)    NOT NULL,
     [YieldOutOfChiller] NUMERIC (5, 4) NOT NULL,
@@ -7,7 +7,7 @@
     [LiveHaulUpper]     NUMERIC (4, 2) NULL,
     [LiveHaulTarget]    NUMERIC (4, 2) NULL,
     CONSTRAINT [PK_PlantParameters] PRIMARY KEY CLUSTERED ([ID] ASC),
-    CONSTRAINT [FK_PlantParameters_ValidSites] FOREIGN KEY ([PlantCode]) REFERENCES [dbo].[PLANT] ([PLANT_CODE]),
+    CONSTRAINT [FK_PlantParameters_ValidSites] FOREIGN KEY ([PlantCode]) REFERENCES [stage].[PLANT] ([PLANT_CODE]),
     CONSTRAINT [IX_PlantParameters_PlantCode] UNIQUE NONCLUSTERED ([PlantCode] ASC)
 );
 

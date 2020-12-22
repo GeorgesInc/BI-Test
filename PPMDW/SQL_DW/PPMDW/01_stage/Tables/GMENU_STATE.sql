@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[GMENU_STATE] (
+﻿CREATE TABLE [stage].[GMENU_STATE] (
     [STATE_CODE]  VARCHAR (2)    NOT NULL,
     [NAME]        VARCHAR (30)   NOT NULL,
     [TAX_RATE]    NUMERIC (6, 4) NULL,

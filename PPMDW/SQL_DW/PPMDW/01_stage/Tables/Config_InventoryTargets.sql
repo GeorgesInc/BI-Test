@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Config_InventoryTargets]
+﻿CREATE TABLE [stage].[Config_InventoryTargets]
 (
 	[ProdCode] VARCHAR(12) NOT NULL , 
     [WhseCode] VARCHAR(4) NOT NULL, 

@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[GMENU_CUSTOMER] (
+﻿CREATE TABLE [stage].[GMENU_CUSTOMER] (
     [CUST_CODE]              VARCHAR (9)     NOT NULL,
     [NAME]                   VARCHAR (30)    NOT NULL,
     [ADDR1]                  VARCHAR (30)    NULL,

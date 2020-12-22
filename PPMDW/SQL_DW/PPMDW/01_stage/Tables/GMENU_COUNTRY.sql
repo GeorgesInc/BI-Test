@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[GMENU_COUNTRY] (
+﻿CREATE TABLE [stage].[GMENU_COUNTRY] (
     [COUNTRY_CODE]      VARCHAR (3)  NOT NULL,
     [NAME]              VARCHAR (40) NOT NULL,
     [EXPORT_ID]         VARCHAR (3)  NULL,

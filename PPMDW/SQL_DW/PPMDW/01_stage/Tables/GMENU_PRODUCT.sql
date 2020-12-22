@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[GMENU_PRODUCT] (
+﻿CREATE TABLE [stage].[GMENU_PRODUCT] (
     [PROD_CODE]         VARCHAR (12)    NOT NULL,
     [DESCR]             VARCHAR (40)    NOT NULL,
     [PROD_UNIT_CODE]    VARCHAR (6)     NOT NULL,

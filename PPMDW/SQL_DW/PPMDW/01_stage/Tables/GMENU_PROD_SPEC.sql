@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[GMENU_PROD_SPEC] (
+﻿CREATE TABLE [stage].[GMENU_PROD_SPEC] (
     [PROD_CODE]                VARCHAR (12)   NOT NULL,
     [RD_PROD_CODE]             NUMERIC (6)    NOT NULL,
     [UPC_CASE_CODE]            VARCHAR (12)   NOT NULL,

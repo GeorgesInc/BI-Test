@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[GMENU_HOUSE] (
+﻿CREATE TABLE [stage].[GMENU_HOUSE] (
     [GROWER_CODE]                NUMERIC (5)    NOT NULL,
     [FARM_CODE]                  NUMERIC (2)    NOT NULL,
     [HOUSE_CODE]                 NUMERIC (2)    NOT NULL,

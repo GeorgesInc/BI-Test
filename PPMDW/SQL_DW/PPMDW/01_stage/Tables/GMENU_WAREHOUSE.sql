@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[GMENU_WAREHOUSE] (
+﻿CREATE TABLE [stage].[GMENU_WAREHOUSE] (
     [WHSE_CODE]           VARCHAR (4)  NOT NULL,
     [NAME]                VARCHAR (30) NOT NULL,
     [ADDR1]               VARCHAR (30) NULL,
