@@ -117,6 +117,11 @@
     <Build Include="Schemas\integrate.sql" />
     <Build Include="Schemas\stage.sql" />
     <Build Include="Security\GEORGES_bl0040.sql" />
+    <Build Include="01_stage\Tables\SigmaGCT_Product.sql" />
+    <Build Include="01_stage\Tables\SigmaGCT_OutboundShipment.sql" />
+    <Build Include="01_stage\Tables\SigmaGCT_OutboundOrderDetail.sql" />
+    <Build Include="01_stage\Tables\SigmaGCT_OutboundOrder.sql" />
+    <Build Include="01_stage\Tables\SigmaGCT_Customer.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="01_stage\Tables\GMENU_BRAND.sql" />
