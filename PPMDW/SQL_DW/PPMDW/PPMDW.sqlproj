@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{7a7d33cf-622f-4b0a-a22f-9657248e3559}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -74,12 +74,10 @@
     <Folder Include="00_etl" />
     <Folder Include="00_etl\Tables" />
     <Folder Include="Deployment" />
+    <Folder Include="Schemas" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="01_stage\Tables\GMENU_BIRD_SIZE.sql" />
-    <Build Include="Security\stage.sql" />
-    <Build Include="Security\dwsem.sql" />
-    <Build Include="Security\integrate.sql" />
     <Build Include="01_stage\Tables\GMENU_CONTRACT.sql" />
     <Build Include="01_stage\Tables\GMENU_COUNTRY.sql" />
     <Build Include="01_stage\Tables\GMENU_CUSTOMER.sql" />
@@ -91,7 +89,6 @@
     <Build Include="01_stage\Tables\GMENU_HOUSE.sql" />
     <Build Include="01_stage\Tables\Config_InventoryTargets.sql" />
     <Build Include="00_etl\Tables\JobRunStatistics.sql" />
-    <Build Include="Security\etl.sql" />
     <Build Include="01_stage\Tables\GMENU_KILL_SCHEDULE.sql" />
     <Build Include="01_stage\Tables\GMENU_MKT_REGION.sql" />
     <Build Include="01_stage\Tables\GMENU_MKT_TERRITORY.sql" />
@@ -114,6 +111,12 @@
     <Build Include="01_stage\Tables\GMENU_TREATMENT.sql" />
     <Build Include="01_stage\Tables\GMENU_WAREHOUSE.sql" />
     <Build Include="01_stage\Tables\GMENU_WOG_SIZE.sql" />
+    <Build Include="Security\GEORGES_bl0040ep.sql" />
+    <Build Include="Schemas\dwsem.sql" />
+    <Build Include="Schemas\etl.sql" />
+    <Build Include="Schemas\integrate.sql" />
+    <Build Include="Schemas\stage.sql" />
+    <Build Include="Security\GEORGES_bl0040.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="01_stage\Tables\GMENU_BRAND.sql" />
@@ -123,5 +126,9 @@
     <Build Include="01_stage\Tables\GMENU_COMPANY.sql" />
     <Build Include="01_stage\Tables\GMENU_Concept.sql" />
     <Build Include="01_stage\Tables\GMENU_CONT_DISEASE.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Deployment\PPMDW_Dev.publish.xml" />
+    <None Include="Deployment\PPMDW_Dev.compare.scmp" />
   </ItemGroup>
 </Project>
