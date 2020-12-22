@@ -4,5 +4,5 @@
     [WhseCode] VARCHAR(4) NOT NULL, 
     [CasesTarget] NUMERIC(8) NULL, 
     CONSTRAINT [PK_InventoryTargets] PRIMARY KEY ([ProdCode], [WhseCode]), 
-    CONSTRAINT [FK_InventoryTargets_Product] FOREIGN KEY ([ProdCode]) REFERENCES [PRODUCT]([PROD_CODE])
+    CONSTRAINT [FK_InventoryTargets_Product] FOREIGN KEY ([ProdCode]) REFERENCES [stage].[GMENU_PRODUCT]([PROD_CODE])
 )

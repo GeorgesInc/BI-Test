@@ -73,6 +73,7 @@
     <Folder Include="Security" />
     <Folder Include="00_etl" />
     <Folder Include="00_etl\Tables" />
+    <Folder Include="Deployment" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="01_stage\Tables\GMENU_BIRD_SIZE.sql" />
