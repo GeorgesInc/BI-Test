@@ -1,0 +1,5 @@
+﻿CREATE TABLE [stage].[GMENU_BRAND] (
+    [BRAND_CODE] VARCHAR (3)  NOT NULL,
+    [NAME]       VARCHAR (30) NOT NULL
+);
+

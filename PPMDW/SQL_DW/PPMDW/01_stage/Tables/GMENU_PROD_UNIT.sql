@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[GMENU_PROD_UNIT] (
+    [PROD_UNIT_CODE] VARCHAR (6)  NOT NULL,
+    [DESCR]          VARCHAR (30) NOT NULL
+);
+

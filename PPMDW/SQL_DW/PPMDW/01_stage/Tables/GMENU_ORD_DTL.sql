@@ -1,0 +1,24 @@
+﻿CREATE TABLE [dbo].[GMENU_ORD_DTL] (
+    [ORDER_DTL_SEQ_CODE] NUMERIC (8)    NOT NULL,
+    [ORDER_SEQ_CODE]     VARCHAR (6)    NOT NULL,
+    [PROD_CODE]          VARCHAR (12)   NOT NULL,
+    [CASES_ORD_ORIG]     NUMERIC (4)    NULL,
+    [CASES_ORD]          NUMERIC (4)    NULL,
+    [PRICE_GRP_CODE]     VARCHAR (6)    NULL,
+    [MARKET_GRP_CODE]    VARCHAR (4)    NULL,
+    [PRICE_FORMULA_CODE] VARCHAR (2)    NULL,
+    [PRICE]              NUMERIC (7, 4) NULL,
+    [MARKET_PRICE_ADJ]   NUMERIC (6, 4) NULL,
+    [PRICE_LOCK_FLAG]    CHAR (1)       NOT NULL,
+    [BROKERAGE_CODE]     VARCHAR (2)    NULL,
+    [SMR_EXEMPT_FLAG]    CHAR (1)       NOT NULL,
+    [SS_DESCR]           VARCHAR (40)   NULL,
+    [SS_QTY]             NUMERIC (4)    NULL,
+    [SS_UNIT_TYPE]       CHAR (2)       NULL,
+    [SHRTG_REASON_CODE]  VARCHAR (2)    NULL,
+    [PRICE_TYPE]         VARCHAR (2)    NOT NULL,
+    [SHIP_FROM_WHSE]     VARCHAR (4)    NOT NULL,
+    [SAMPLE_FLAG]        CHAR (1)       NOT NULL,
+    [SHIPPED_FLAG]       CHAR (1)       NOT NULL
+);
+

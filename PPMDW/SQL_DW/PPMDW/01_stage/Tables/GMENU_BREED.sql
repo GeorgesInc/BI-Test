@@ -1,0 +1,7 @@
+﻿CREATE TABLE [stage].[GMENU_BREED] (
+    [COMP_CODE]      NUMERIC (4)  NOT NULL,
+    [BREED_CODE]     NUMERIC (4)  NOT NULL,
+    [DESCR]          VARCHAR (30) NOT NULL,
+    [BRDR_TYPE_CODE] NUMERIC (2)  NULL
+);
+

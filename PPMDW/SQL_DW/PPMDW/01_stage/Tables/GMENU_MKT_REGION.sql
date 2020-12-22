@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[GMENU_MKT_REGION] (
+    [MKT_RGN_CODE] VARCHAR (3)  NOT NULL,
+    [DESCR]        VARCHAR (30) NOT NULL
+);
+

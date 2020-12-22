@@ -1,0 +1,5 @@
+﻿CREATE TABLE [stage].[GMENU_BIRD_SIZE] (
+    [BIRD_SIZE_CODE] VARCHAR (2)  NOT NULL,
+    [DESCR]          VARCHAR (30) NOT NULL
+);
+

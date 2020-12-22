@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[GMENU_PROD_LINE] (
+    [PROD_LINE_CODE] CHAR (6)  NOT NULL,
+    [DESCR]          CHAR (30) NOT NULL
+);
+
