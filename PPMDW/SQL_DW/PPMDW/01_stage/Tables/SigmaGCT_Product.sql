@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[SigmaGCT_Product](
+﻿CREATE TABLE [stage].[SigmaGCT_Product](
 	[ProductID] [int] NOT NULL,
 	[VendorID] [int] NULL,
 	[SKU] [nvarchar](25) NULL,

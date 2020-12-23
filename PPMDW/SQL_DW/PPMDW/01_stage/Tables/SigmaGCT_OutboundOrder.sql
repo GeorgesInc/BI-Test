@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[SigmaGCT_OutboundOrder](
+﻿CREATE TABLE [stage].[SigmaGCT_OutboundOrder](
 	[OutboundOrderID] [int] NOT NULL,
 	[OutboundShipmentID] [int] NULL,
 	[CustomerID] [int] NULL,

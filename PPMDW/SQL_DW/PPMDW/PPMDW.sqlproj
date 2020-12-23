@@ -75,6 +75,7 @@
     <Folder Include="00_etl\Tables" />
     <Folder Include="Deployment" />
     <Folder Include="Schemas" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="01_stage\Tables\GMENU_BIRD_SIZE.sql" />
@@ -122,6 +123,8 @@
     <Build Include="01_stage\Tables\SigmaGCT_OutboundOrderDetail.sql" />
     <Build Include="01_stage\Tables\SigmaGCT_OutboundOrder.sql" />
     <Build Include="01_stage\Tables\SigmaGCT_Customer.sql" />
+    <Build Include="01_stage\Tables\Config_PlantsMap.sql" />
+    <Build Include="01_stage\Tables\Config_KillScheduleHistogram.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="01_stage\Tables\GMENU_BRAND.sql" />
@@ -135,5 +138,6 @@
   <ItemGroup>
     <None Include="Deployment\PPMDW_Dev.publish.xml" />
     <None Include="Deployment\PPMDW_Dev.compare.scmp" />
+    <None Include="Scripts\ConfigData.sql" />
   </ItemGroup>
 </Project>

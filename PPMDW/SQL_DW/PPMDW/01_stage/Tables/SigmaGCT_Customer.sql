@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[SigmaGCT_Customer](
+﻿CREATE TABLE [stage].[SigmaGCT_Customer](
 	[CustomerID] [int] NOT NULL,
 	[MfgID] [nvarchar](7) NULL,
 	[Name] [nvarchar](50) NULL,
