@@ -7,7 +7,7 @@
     [LiveHaulUpper]     NUMERIC (4, 2) NULL,
     [LiveHaulTarget]    NUMERIC (4, 2) NULL,
     CONSTRAINT [PK_PlantParameters] PRIMARY KEY CLUSTERED ([ID] ASC),
-    CONSTRAINT [FK_PlantParameters_ValidSites] FOREIGN KEY ([PlantCode]) REFERENCES [stage].[GMENU_PLANT] ([PLANT_CODE]),
+--    CONSTRAINT [FK_PlantParameters_ValidSites] FOREIGN KEY ([PlantCode]) REFERENCES [stage].[GMENU_PLANT] ([PLANT_CODE]),
     CONSTRAINT [IX_PlantParameters_PlantCode] UNIQUE NONCLUSTERED ([PlantCode] ASC)
 );
 

@@ -3,9 +3,9 @@
     [WhseCode]    VARCHAR (4) NOT NULL,
     [CompanyCode] NUMERIC (4) NULL,
     [SigmaName] NVARCHAR(10) NULL, 
-    CONSTRAINT [FK_SitesMap_COMPANY] FOREIGN KEY ([CompanyCode]) REFERENCES [stage].[GMENU_COMPANY] ([COMP_CODE]),
-    CONSTRAINT [FK_SitesMap_Plant] FOREIGN KEY ([PlantCode]) REFERENCES [stage].[GMENU_PLANT] ([PLANT_CODE]),
-    CONSTRAINT [FK_SitesMap_Warehouse] FOREIGN KEY ([WhseCode]) REFERENCES [stage].[GMENU_WAREHOUSE] ([WHSE_CODE]), 
+--    CONSTRAINT [FK_SitesMap_COMPANY] FOREIGN KEY ([CompanyCode]) REFERENCES [stage].[GMENU_COMPANY] ([COMP_CODE]),
+--    CONSTRAINT [FK_SitesMap_Plant] FOREIGN KEY ([PlantCode]) REFERENCES [stage].[GMENU_PLANT] ([PLANT_CODE]),
+--    CONSTRAINT [FK_SitesMap_Warehouse] FOREIGN KEY ([WhseCode]) REFERENCES [stage].[GMENU_WAREHOUSE] ([WHSE_CODE]), 
     CONSTRAINT [CK_SigmaName_Column] CHECK ([SigmaName]='SigmaGSA' OR [SigmaName]='SigmaGFP' OR [SigmaName]='SigmaGHV' OR [SigmaName]='SigmaGEV' OR [SigmaName]='SigmaGCM' OR [SigmaName]='SigmaGCT'), 
     CONSTRAINT [PK_SitesMap] PRIMARY KEY ([WhseCode]), 
     CONSTRAINT [AK_SitesMap_SigmaName] UNIQUE ([SigmaName])

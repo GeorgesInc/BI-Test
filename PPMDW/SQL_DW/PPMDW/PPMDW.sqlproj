@@ -125,6 +125,8 @@
     <Build Include="01_stage\Tables\SigmaGCT_Customer.sql" />
     <Build Include="01_stage\Tables\Config_PlantsMap.sql" />
     <Build Include="01_stage\Tables\Config_KillScheduleHistogram.sql" />
+    <Build Include="01_stage\Tables\Config_TableSources.sql" />
+    <None Include="Scripts\TableSources_SigmaGCT.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="01_stage\Tables\GMENU_BRAND.sql" />
@@ -137,7 +139,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Deployment\PPMDW_Dev.publish.xml" />
-    <None Include="Deployment\PPMDW_Dev.compare.scmp" />
+    <None Include="Deployment\PPMDW_ProjectSync_DevSource.compare.scmp" />
     <None Include="Scripts\ConfigData.sql" />
+    <None Include="Scripts\ctePPMDWConfig_TableSources.sql" />
+    <None Include="Deployment\PPMDW_Dev.compare.scmp" />
+    <None Include="Scripts\TableSources_Gmenu.sql" />
   </ItemGroup>
 </Project>

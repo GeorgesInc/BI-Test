@@ -1,19 +1,27 @@
-﻿USE [ProductionPlanning]
+﻿
+USE [PPMDW]
 GO
 
 /*****************************************
 PPM Configuration data initialized with this script. 
 * Include in build = False
 
--- Config_DemandGroup
--- Config_KillScheduleHistogram
--- Config_ModelParamDate
--- Config_PlantParameters
--- Config_SitesMap
--- Config_InventoryTargets
+FK Dependencies
+* stage.Config_PlantParameters -- "FK_PlantParameters_ValidSites". The conflict occurred in database "PPMDW", table "stage.GMENU_PLANT", column 'PLANT_CODE'.
+* stage.Config_PlantsMap -- "FK_SitesMap_COMPANY". The conflict occurred in database "PPMDW", table "stage.GMENU_COMPANY", column 'COMP_CODE'.
+* stage.Config_InventoryTargets -- "FK_InventoryTargets_Product". The conflict occurred in database "PPMDW", table "stage.GMENU_PRODUCT", column 'PROD_CODE'.
 *****************************************/
 
--- Config_DemandGroup
+-- Empty the tables
+DELETE FROM stage.Config_DemandGroup
+DELETE FROM stage.Config_KillScheduleHistogram
+DELETE FROM stage.Config_ModelParamDate
+DELETE FROM stage.Config_PlantParameters 
+DELETE FROM stage.Config_PlantsMap 
+DELETE FROM stage.Config_InventoryTargets 
+DELETE FROM stage.Config_TableSources
+
+--****** Config_DemandGroup
 INSERT [stage].[Config_DemandGroup] ([DemandGroupCode], [DemandGroupName]) VALUES (N'COOK', N'FullyCooked')
 INSERT [stage].[Config_DemandGroup] ([DemandGroupCode], [DemandGroupName]) VALUES (N'FF', N'FastFood')
 INSERT [stage].[Config_DemandGroup] ([DemandGroupCode], [DemandGroupName]) VALUES (N'OD', N'OtherDemand')
@@ -21,7 +29,7 @@ INSERT [stage].[Config_DemandGroup] ([DemandGroupCode], [DemandGroupName]) VALUE
 INSERT [stage].[Config_DemandGroup] ([DemandGroupCode], [DemandGroupName]) VALUES (N'WIP', N'WorkInProcess')
 
 
--- Config_KillScheduleHistogram
+--****** Config_KillScheduleHistogram
 INSERT [stage].[Config_KillScheduleHistogram] ([Band], [DeviationFromAvg], [AllocationPct]) VALUES (N'1', -2.45, 1E-05)
 INSERT [stage].[Config_KillScheduleHistogram] ([Band], [DeviationFromAvg], [AllocationPct]) VALUES (N'2', -2.4, 1.69014E-05)
 INSERT [stage].[Config_KillScheduleHistogram] ([Band], [DeviationFromAvg], [AllocationPct]) VALUES (N'3', -2.35, 1.69014E-05)
@@ -125,41 +133,48 @@ INSERT [stage].[Config_KillScheduleHistogram] ([Band], [DeviationFromAvg], [Allo
 GO
 
 
--- Config_ModelParamDate
+--****** Config_ModelParamDate
 INSERT [stage].[Config_ModelParamDate] ([ModelDate]) VALUES (CAST(N'2018-12-07' AS Date))
 
 
--- Config_PlantParameters
-SET IDENTITY_INSERT [stage].[Config_PlantParameters] ON 
+--****** Config_PlantParameters
 
-INSERT [stage].[Config_PlantParameters] ([ID], [PlantCode], [YieldOutOfChiller], [Grade], [LiveHaulLower], [LiveHaulUpper], [LiveHaulTarget]) 
+-- "FK_PlantParameters_ValidSites". The conflict occurred in database "PPMDW", table "stage.GMENU_PLANT", column 'PLANT_CODE'.
+--/*
+--SET IDENTITY_INSERT [stage].[Config_PlantParameters] ON 
+INSERT [stage].[Config_PlantParameters] ([PlantCode], [YieldOutOfChiller], [Grade], [LiveHaulLower], [LiveHaulUpper], [LiveHaulTarget]) 
 	VALUES (N'01', CAST(0.8240 AS Numeric(5, 4)), CAST(0.8700 AS Numeric(5, 4)), CAST(3.65 AS Numeric(4, 2)), CAST(3.85 AS Numeric(4, 2)), CAST(3.75 AS Numeric(4, 2)))
-INSERT [stage].[Config_PlantParameters] ([ID], [PlantCode], [YieldOutOfChiller], [Grade], [LiveHaulLower], [LiveHaulUpper], [LiveHaulTarget]) 
+INSERT [stage].[Config_PlantParameters] ([PlantCode], [YieldOutOfChiller], [Grade], [LiveHaulLower], [LiveHaulUpper], [LiveHaulTarget]) 
 	VALUES (N'20', CAST(0.5000 AS Numeric(5, 4)), CAST(0.5000 AS Numeric(5, 4)), CAST(3.70 AS Numeric(4, 2)), CAST(4.00 AS Numeric(4, 2)), CAST(3.85 AS Numeric(4, 2)))
-INSERT [stage].[Config_PlantParameters] ([ID], [PlantCode], [YieldOutOfChiller], [Grade], [LiveHaulLower], [LiveHaulUpper], [LiveHaulTarget]) 
+INSERT [stage].[Config_PlantParameters] ([PlantCode], [YieldOutOfChiller], [Grade], [LiveHaulLower], [LiveHaulUpper], [LiveHaulTarget]) 
 	VALUES (N'02', CAST(0.5000 AS Numeric(5, 4)), CAST(0.5000 AS Numeric(5, 4)), NULL, NULL, NULL)
+--SET IDENTITY_INSERT [stage].[Config_PlantParameters] OFF
+--*/
 
-SET IDENTITY_INSERT [stage].[Config_PlantParameters] OFF
+--****** Config_SitesMap
 
-
--- Config_SitesMap
-INSERT [stage].[Config_SitesMap] ([PlantCode], [WhseCode], [CompanyCode], [SigmaName]) 
+-- "FK_SitesMap_COMPANY". The conflict occurred in database "PPMDW", table "stage.GMENU_COMPANY", column 'COMP_CODE'.
+--/*
+INSERT [stage].[Config_PlantsMap] ([PlantCode], [WhseCode], [CompanyCode], [SigmaName]) 
 	VALUES (N'01', N'01', CAST(110 AS Numeric(4, 0)), N'SigmaGEV')
-INSERT [stage].[Config_SitesMap] ([PlantCode], [WhseCode], [CompanyCode], [SigmaName]) 
+INSERT [stage].[Config_PlantsMap] ([PlantCode], [WhseCode], [CompanyCode], [SigmaName]) 
 	VALUES (N'02', N'30', CAST(130 AS Numeric(4, 0)), N'SigmaGHV')
-INSERT [stage].[Config_SitesMap] ([PlantCode], [WhseCode], [CompanyCode], [SigmaName]) 
+INSERT [stage].[Config_PlantsMap] ([PlantCode], [WhseCode], [CompanyCode], [SigmaName]) 
 	VALUES (NULL, N'41', NULL, N'SigmaGCT')
-INSERT [stage].[Config_SitesMap] ([PlantCode], [WhseCode], [CompanyCode], [SigmaName]) 
+INSERT [stage].[Config_PlantsMap] ([PlantCode], [WhseCode], [CompanyCode], [SigmaName]) 
 	VALUES (NULL, N'78', CAST(278 AS Numeric(4, 0)), NULL)
-INSERT [stage].[Config_SitesMap] ([PlantCode], [WhseCode], [CompanyCode], [SigmaName]) 
+INSERT [stage].[Config_PlantsMap] ([PlantCode], [WhseCode], [CompanyCode], [SigmaName]) 
 	VALUES (N'10', N'80', CAST(280 AS Numeric(4, 0)), N'SigmaGSA')
-INSERT [stage].[Config_SitesMap] ([PlantCode], [WhseCode], [CompanyCode], [SigmaName]) 
+INSERT [stage].[Config_PlantsMap] ([PlantCode], [WhseCode], [CompanyCode], [SigmaName]) 
 	VALUES (N'20', N'86', CAST(286 AS Numeric(4, 0)), N'SigmaGCM')
-INSERT [stage].[Config_SitesMap] ([PlantCode], [WhseCode], [CompanyCode], [SigmaName]) 
+INSERT [stage].[Config_PlantsMap] ([PlantCode], [WhseCode], [CompanyCode], [SigmaName]) 
 	VALUES (NULL, N'88', CAST(288 AS Numeric(4, 0)), N'SigmaGFP')
+--*/
 
+--****** Config_InventoryTargets
 
--- Config_InventoryTargets
+-- The conflict occurred in database "PPMDW", table "stage.GMENU_PRODUCT", column 'PROD_CODE'.
+--/*
 INSERT [stage].[Config_InventoryTargets] ([ProdCode], [WhseCode], [CasesTarget]) VALUES (N'71422', N'41', CAST(1029 AS Numeric(8, 0)))
 INSERT [stage].[Config_InventoryTargets] ([ProdCode], [WhseCode], [CasesTarget]) VALUES (N'71526', N'41', CAST(3832 AS Numeric(8, 0)))
 INSERT [stage].[Config_InventoryTargets] ([ProdCode], [WhseCode], [CasesTarget]) VALUES (N'71655', N'41', CAST(0 AS Numeric(8, 0)))
@@ -204,3 +219,51 @@ INSERT [stage].[Config_InventoryTargets] ([ProdCode], [WhseCode], [CasesTarget])
 INSERT [stage].[Config_InventoryTargets] ([ProdCode], [WhseCode], [CasesTarget]) VALUES (N'72874', N'41', CAST(0 AS Numeric(8, 0)))
 INSERT [stage].[Config_InventoryTargets] ([ProdCode], [WhseCode], [CasesTarget]) VALUES (N'72894', N'41', CAST(44552 AS Numeric(8, 0)))
 
+--*/
+
+--****** Config_TableSources
+INSERT [stage].[Config_TableSources] 
+	([SOURCE_TBL], [SOURCE_SCHEMA], [STAGE_TBLPREFIX])
+	--([TBL_CATALOG], [TBL_SCHEMA], [TARGET_TBL]) 
+	VALUES 
+	(N'ORD_HDR', N'rocco', N'GMENU_')
+	, (N'ORD_DTL', N'rocco', N'GMENU_')
+	, (N'MKT_TERRITORY', N'rocco', N'GMENU_')
+	, (N'MKT_REGION', N'rocco', N'GMENU_')
+	, (N'KILL_SCHEDULE', N'rocco', N'GMENU_')
+	, (N'HOUSE', N'rocco', N'GMENU_')
+	, (N'DISEASE', N'rocco', N'GMENU_')
+	, (N'CUSTOMER_SHIPTO', N'rocco', N'GMENU_')
+	, (N'CUSTOMER_GROUP', N'rocco', N'GMENU_')
+	, (N'CUSTOMER_CHANNEL', N'rocco', N'GMENU_')
+	, (N'CUSTOMER', N'rocco', N'GMENU_')
+	, (N'COUNTRY', N'rocco', N'GMENU_')
+	, (N'CONTRACT', N'rocco', N'GMENU_')
+	, (N'BIRD_SIZE', N'rocco', N'GMENU_')
+	, (N'Concept', N'rocco', N'GMENU_')
+	, (N'COMPANY', N'rocco', N'GMENU_')
+	, (N'CALENDAR', N'rocco', N'GMENU_')
+	, (N'BUYER_CLASS', N'rocco', N'GMENU_')
+	, (N'BREED', N'rocco', N'GMENU_')
+	, (N'BRAND', N'rocco', N'GMENU_')
+	, (N'WOG_SIZE', N'rocco', N'GMENU_')
+	, (N'WAREHOUSE', N'rocco', N'GMENU_')
+	, (N'TREATMENT', N'rocco', N'GMENU_')
+	, (N'STATE', N'rocco', N'GMENU_')
+	, (N'SALESPERSON', N'rocco', N'GMENU_')
+	, (N'PRODUCT', N'rocco', N'GMENU_')
+	, (N'PROD_WHSE_ACTUAL', N'rocco', N'GMENU_')
+	, (N'PROD_UNIT', N'rocco', N'GMENU_')
+	, (N'PROD_SPEC', N'rocco', N'GMENU_')
+	, (N'PROD_LINE', N'rocco', N'GMENU_')
+	, (N'PROD_GROUP', N'rocco', N'GMENU_')
+	, (N'PROD_CLASS', N'rocco', N'GMENU_')
+	, (N'PROD_CATEGORY', N'rocco', N'GMENU_')
+	, (N'PRESERVATION_TYPE', N'rocco', N'GMENU_')
+	, (N'PLANT', N'rocco', N'GMENU_')
+	, (N'CONT_DISEASE', N'rocco', N'GMENU_')
+	, (N'Customer', N'dbo', N'SigmaGCT_')
+	, (N'OutboundOrder', N'dbo', N'SigmaGCT_')
+	, (N'OutboundOrderDetail', N'dbo', N'SigmaGCT_')
+	, (N'OutboundShipment', N'dbo', N'SigmaGCT_')
+	, (N'Product', N'dbo', N'SigmaGCT_')
