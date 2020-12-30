@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseName>PPMDW</TargetDatabaseName>
+    <DeployScriptFileName>PPMDW.sql</DeployScriptFileName>
+    <TargetConnectionString>Data Source=gmappmdw01sql.database.windows.net;Persist Security Info=True;User ID=PPMAdmn;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</TargetConnectionString>
+    <ProfileVersionNumber>1</ProfileVersionNumber>
+    <BlockOnPossibleDataLoss>True</BlockOnPossibleDataLoss>
+    <ScriptDatabaseOptions>True</ScriptDatabaseOptions>
+    <ExcludeDatabaseRoles>True</ExcludeDatabaseRoles>
+    <ExcludeLogins>True</ExcludeLogins>
+    <IgnoreRoleMembership>True</IgnoreRoleMembership>
+    <ExcludeUsers>True</ExcludeUsers>
+  </PropertyGroup>
+</Project>
