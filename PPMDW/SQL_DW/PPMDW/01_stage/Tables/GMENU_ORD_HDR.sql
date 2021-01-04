@@ -36,6 +36,8 @@
     [ROUTE_SHIPTO_CODE] VARCHAR (3)    NULL,
     [PICKUP_FLAG]       CHAR (1)       NOT NULL,
     [SHIP_TIME]         NUMERIC (6)    NULL,
-    [WHSE_CONF_TYPE]    CHAR (1)       NOT NULL
+    [WHSE_CONF_TYPE]    CHAR (1)       NOT NULL,
+	Id_AzCluster        INT            NOT NULL IDENTITY 
+	CONSTRAINT [PkAzCluster_GMENU_ORD_HDR] PRIMARY KEY CLUSTERED
 );
 

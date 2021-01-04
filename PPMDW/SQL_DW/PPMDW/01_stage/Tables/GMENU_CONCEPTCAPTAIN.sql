@@ -1,0 +1,7 @@
+﻿CREATE TABLE [stage].[GMENU_CONCEPTCAPTAIN](
+	[CAPTAINID]  [numeric](8, 0) NOT NULL,
+	[NAME]       [varchar](32)   NULL, 
+	Id_AzCluster INT             NOT NULL IDENTITY 
+	CONSTRAINT [PkAzCluster_GMENU_CONCEPTCAPTAIN] PRIMARY KEY CLUSTERED
+) 
+GO

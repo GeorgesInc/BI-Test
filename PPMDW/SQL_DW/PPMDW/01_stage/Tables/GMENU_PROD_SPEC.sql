@@ -33,6 +33,9 @@
     [BRAND_CODE]               VARCHAR (3)    NOT NULL,
     [MIN_COMP_DROP_WGT]        NUMERIC (8, 4) NOT NULL,
     [MAX_COMP_DROP_WGT]        NUMERIC (8, 4) NOT NULL,
-    [EXPORT_ONLY_FLAG]         CHAR (1)       NOT NULL
+    [EXPORT_ONLY_FLAG]         CHAR (1)       NOT NULL, 
+    [GS1_PREFIX]               VARCHAR(7)     NULL,
+	Id_AzCluster               INT            NOT NULL IDENTITY 
+	CONSTRAINT [PkAzCluster_GMENU_PROD_SPEC] PRIMARY KEY CLUSTERED
 );
 

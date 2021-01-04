@@ -49,6 +49,8 @@
     [CELL_PHONE_NBR]         VARCHAR (15)    NULL,
     [PLT_EXCHANGE_FLAG]      CHAR (1)        NOT NULL,
     [ACH_CUST_FLAG]          CHAR (1)        NOT NULL,
-    [COMMENT_TEXT]           VARCHAR (200)   NULL
+    [COMMENT_TEXT]           VARCHAR (200)   NULL,
+	Id_AzCluster             INT             NOT NULL IDENTITY 
+	CONSTRAINT [PkAzCluster_GMENU_CUSTOMER] PRIMARY KEY CLUSTERED
 );
 

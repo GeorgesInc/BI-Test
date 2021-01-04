@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{7a7d33cf-622f-4b0a-a22f-9657248e3559}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -76,6 +76,7 @@
     <Folder Include="Deployment" />
     <Folder Include="Schemas" />
     <Folder Include="Scripts" />
+    <Folder Include="00_etl\Functions" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="01_stage\Tables\GMENU_BIRD_SIZE.sql" />
@@ -85,7 +86,7 @@
     <Build Include="01_stage\Tables\GMENU_CUSTOMER_CHANNEL.sql" />
     <Build Include="01_stage\Tables\GMENU_CUSTOMER_GROUP.sql" />
     <Build Include="01_stage\Tables\GMENU_CUSTOMER_SHIPTO.sql" />
-    <Build Include="01_stage\Tables\Config_DemandGroup_.sql" />
+    <Build Include="01_stage\Tables\Config_DemandGroup.sql" />
     <Build Include="01_stage\Tables\GMENU_DISEASE.sql" />
     <Build Include="01_stage\Tables\GMENU_HOUSE.sql" />
     <Build Include="01_stage\Tables\Config_InventoryTargets.sql" />
@@ -127,6 +128,13 @@
     <Build Include="01_stage\Tables\Config_KillScheduleHistogram.sql" />
     <Build Include="01_stage\Tables\Config_TableSources.sql" />
     <None Include="Scripts\TableSources_SigmaGCT.sql" />
+    <Build Include="01_stage\Tables\GMENU_CONCEPTCAPTAIN.sql" />
+    <Build Include="01_stage\Tables\GMENU_CORE_CODE.sql" />
+    <Build Include="01_stage\Tables\GMENU_DRIVER_CODE.sql" />
+    <Build Include="02_integrate\Tables\Table1.sql" />
+    <Build Include="01_stage\Tables\GMENU_SETL_LOT.sql" />
+    <None Include="Scripts\ADFAzure.sql" />
+    <Build Include="00_etl\Functions\udfDateTimeOffset_CST.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="01_stage\Tables\GMENU_BRAND.sql" />
@@ -134,7 +142,7 @@
     <Build Include="01_stage\Tables\GMENU_BUYER_CLASS.sql" />
     <Build Include="01_stage\Tables\GMENU_CALENDAR.sql" />
     <Build Include="01_stage\Tables\GMENU_COMPANY.sql" />
-    <Build Include="01_stage\Tables\GMENU_Concept.sql" />
+    <Build Include="01_stage\Tables\GMENU_CONCEPT.sql" />
     <Build Include="01_stage\Tables\GMENU_CONT_DISEASE.sql" />
   </ItemGroup>
   <ItemGroup>
@@ -144,5 +152,13 @@
     <None Include="Scripts\ctePPMDWConfig_TableSources.sql" />
     <None Include="Deployment\PPMDW_Dev.compare.scmp" />
     <None Include="Scripts\TableSources_Gmenu.sql" />
+    <None Include="Scripts\cteSqlSchemaTableRowCount.sql" />
+    <None Include="Deployment\PPMDW_Az-Dev.compare.scmp" />
+    <None Include="Deployment\PPMDW_Az-Dev.Publish.xml" />
+    <None Include="Scripts\PPMDWUser.sql" />
+    <None Include="Scripts\compatibility_level.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="PPMDW.refactorlog" />
   </ItemGroup>
 </Project>

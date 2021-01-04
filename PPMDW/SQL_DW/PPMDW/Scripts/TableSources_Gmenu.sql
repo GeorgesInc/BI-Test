@@ -4,6 +4,7 @@
 	, STAGE_TBLPREFIX
 	, TARGET_TBL
 	, TARGET_SCHEMA
+	, DW_Timestamp
 FROM 
 	stage.Config_TableSources 
 WHERE

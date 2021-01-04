@@ -1,0 +1,7 @@
+﻿CREATE TABLE [stage].[GMENU_CORE_CODE](
+	[CORE_CODE]  numeric(5, 0) NULL,
+	[NAME]       varchar(50)   NULL, 
+	Id_AzCluster INT             NOT NULL IDENTITY 
+	CONSTRAINT [PkAzCluster_GMENU_CORE_CODE] PRIMARY KEY CLUSTERED
+) 
+GO

@@ -19,6 +19,8 @@
     [PRICE_TYPE]         VARCHAR (2)    NOT NULL,
     [SHIP_FROM_WHSE]     VARCHAR (4)    NOT NULL,
     [SAMPLE_FLAG]        CHAR (1)       NOT NULL,
-    [SHIPPED_FLAG]       CHAR (1)       NOT NULL
+    [SHIPPED_FLAG]       CHAR (1)       NOT NULL,
+	Id_AzCluster         INT            NOT NULL IDENTITY 
+	CONSTRAINT [PkAzCluster_GMENU_ORD_DTL] PRIMARY KEY CLUSTERED
 );
 

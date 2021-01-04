@@ -40,6 +40,10 @@
     [STORE_ID]          VARCHAR (15) NULL,
     [CELL_PHONE_NBR]    VARCHAR (15) NULL,
     [SMS_FLAG]          CHAR (1)     NOT NULL,
-    [ACH_CUST_FLAG]     CHAR (1)     NOT NULL
+    [ACH_CUST_FLAG]     CHAR (1)     NOT NULL, 
+    [BILL_DELAY_DAYS]   NUMERIC(2)   NULL, 
+    [CHEP_GLID]         VARCHAR(20)  NULL,
+	Id_AzCluster        INT          NOT NULL IDENTITY 
+	CONSTRAINT [PkAzCluster_GMENU_CUSTOMER_SHIPTO] PRIMARY KEY CLUSTERED
 );
 

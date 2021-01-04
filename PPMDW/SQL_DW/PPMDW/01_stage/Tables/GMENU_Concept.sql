@@ -1,14 +1,16 @@
-﻿CREATE TABLE [stage].[GMENU_Concept] (
-    [ConceptCode]       NVARCHAR (20) NOT NULL,
-    [Customer]          NVARCHAR (9)  NULL,
-    [ProductCode]       NVARCHAR (12) NULL,
-    [CoreCode]          NUMERIC (5)   NULL,
-    [CoreDescription]   NVARCHAR (50) NULL,
-    [DriverCode]        NUMERIC (5)   NULL,
-    [DriverDescription] NVARCHAR (50) NULL,
-    [ConceptName]       NVARCHAR (40) NULL,
-    [CaptainID]         NUMERIC (8)   NULL,
-    [CaptainName]       NVARCHAR (32) NULL,
-    CONSTRAINT [PK_Concept] PRIMARY KEY CLUSTERED ([ConceptCode] ASC)
-);
-
+﻿CREATE TABLE [stage].[GMENU_CONCEPT]
+(
+	[CONCEPTCODE]     VARCHAR(20)   NOT NULL, 
+	[NAME]            VARCHAR(40)   NULL, 
+	[SALESCHANNELID]  NUMERIC(8, 0) NULL, 
+	[CAPTAINID]       NUMERIC(8, 0) NULL, 
+	[PRICETYPEID]     NUMERIC(8, 0) NULL, 
+	[CUSTOMERGROUPID] NUMERIC(8, 0) NULL, 
+	[PRODUCTCODE]     VARCHAR(12)   NULL, 
+	[CUSTOMER]        VARCHAR(9)    NULL, 
+	[DRIVER_CODE]     NUMERIC(5, 0) NULL, 
+	[CORE_CODE]       NUMERIC(5, 0) NULL, 
+	[STATUSTYPE]      CHAR(1)       NULL, 
+	Id_AzCluster      INT NOT NULL IDENTITY CONSTRAINT [PkAzCluster_GMENU_CONCEPT] PRIMARY KEY CLUSTERED
+)
+ 

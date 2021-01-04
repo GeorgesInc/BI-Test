@@ -1,6 +1,6 @@
 ﻿
-USE [PPMDW]
-GO
+--USE [PPMDW]
+--GO
 
 /*****************************************
 PPM Configuration data initialized with this script. 
@@ -13,13 +13,13 @@ FK Dependencies
 *****************************************/
 
 -- Empty the tables
-DELETE FROM stage.Config_DemandGroup
-DELETE FROM stage.Config_KillScheduleHistogram
-DELETE FROM stage.Config_ModelParamDate
-DELETE FROM stage.Config_PlantParameters 
-DELETE FROM stage.Config_PlantsMap 
-DELETE FROM stage.Config_InventoryTargets 
-DELETE FROM stage.Config_TableSources
+TRUNCATE TABLE stage.Config_DemandGroup
+TRUNCATE TABLE stage.Config_KillScheduleHistogram
+TRUNCATE TABLE stage.Config_ModelParamDate
+TRUNCATE TABLE stage.Config_PlantParameters 
+TRUNCATE TABLE stage.Config_PlantsMap 
+TRUNCATE TABLE stage.Config_InventoryTargets 
+TRUNCATE TABLE stage.Config_TableSources
 
 --****** Config_DemandGroup
 INSERT [stage].[Config_DemandGroup] ([DemandGroupCode], [DemandGroupName]) VALUES (N'COOK', N'FullyCooked')
@@ -226,44 +226,58 @@ INSERT [stage].[Config_TableSources]
 	([SOURCE_TBL], [SOURCE_SCHEMA], [STAGE_TBLPREFIX])
 	--([TBL_CATALOG], [TBL_SCHEMA], [TARGET_TBL]) 
 	VALUES 
-	(N'ORD_HDR', N'rocco', N'GMENU_')
-	, (N'ORD_DTL', N'rocco', N'GMENU_')
-	, (N'MKT_TERRITORY', N'rocco', N'GMENU_')
-	, (N'MKT_REGION', N'rocco', N'GMENU_')
-	, (N'KILL_SCHEDULE', N'rocco', N'GMENU_')
-	, (N'HOUSE', N'rocco', N'GMENU_')
-	, (N'DISEASE', N'rocco', N'GMENU_')
-	, (N'CUSTOMER_SHIPTO', N'rocco', N'GMENU_')
-	, (N'CUSTOMER_GROUP', N'rocco', N'GMENU_')
-	, (N'CUSTOMER_CHANNEL', N'rocco', N'GMENU_')
-	, (N'CUSTOMER', N'rocco', N'GMENU_')
-	, (N'COUNTRY', N'rocco', N'GMENU_')
-	, (N'CONTRACT', N'rocco', N'GMENU_')
-	, (N'BIRD_SIZE', N'rocco', N'GMENU_')
-	, (N'Concept', N'rocco', N'GMENU_')
-	, (N'COMPANY', N'rocco', N'GMENU_')
-	, (N'CALENDAR', N'rocco', N'GMENU_')
-	, (N'BUYER_CLASS', N'rocco', N'GMENU_')
-	, (N'BREED', N'rocco', N'GMENU_')
-	, (N'BRAND', N'rocco', N'GMENU_')
-	, (N'WOG_SIZE', N'rocco', N'GMENU_')
-	, (N'WAREHOUSE', N'rocco', N'GMENU_')
-	, (N'TREATMENT', N'rocco', N'GMENU_')
-	, (N'STATE', N'rocco', N'GMENU_')
-	, (N'SALESPERSON', N'rocco', N'GMENU_')
-	, (N'PRODUCT', N'rocco', N'GMENU_')
-	, (N'PROD_WHSE_ACTUAL', N'rocco', N'GMENU_')
-	, (N'PROD_UNIT', N'rocco', N'GMENU_')
-	, (N'PROD_SPEC', N'rocco', N'GMENU_')
-	, (N'PROD_LINE', N'rocco', N'GMENU_')
-	, (N'PROD_GROUP', N'rocco', N'GMENU_')
-	, (N'PROD_CLASS', N'rocco', N'GMENU_')
-	, (N'PROD_CATEGORY', N'rocco', N'GMENU_')
-	, (N'PRESERVATION_TYPE', N'rocco', N'GMENU_')
-	, (N'PLANT', N'rocco', N'GMENU_')
-	, (N'CONT_DISEASE', N'rocco', N'GMENU_')
+	(N'ORD_HDR', N'ROCCO', N'GMENU_')
+	, (N'ORD_DTL', N'ROCCO', N'GMENU_')
+	, (N'MKT_TERRITORY', N'ROCCO', N'GMENU_')
+	, (N'MKT_REGION', N'ROCCO', N'GMENU_')
+	, (N'KILL_SCHEDULE', N'ROCCO', N'GMENU_')
+	, (N'HOUSE', N'ROCCO', N'GMENU_')
+	, (N'DISEASE', N'ROCCO', N'GMENU_')
+	, (N'CUSTOMER_SHIPTO', N'ROCCO', N'GMENU_')
+	, (N'CUSTOMER_GROUP', N'ROCCO', N'GMENU_')
+	, (N'CUSTOMER_CHANNEL', N'ROCCO', N'GMENU_')
+	, (N'CUSTOMER', N'ROCCO', N'GMENU_')
+	, (N'COUNTRY', N'ROCCO', N'GMENU_')
+	, (N'CONTRACT', N'ROCCO', N'GMENU_')
+	, (N'BIRD_SIZE', N'ROCCO', N'GMENU_')
+	, (N'Concept', N'ROCCO', N'GMENU_')
+	, (N'COMPANY', N'ROCCO', N'GMENU_')
+	, (N'CALENDAR', N'ROCCO', N'GMENU_')
+	, (N'BUYER_CLASS', N'ROCCO', N'GMENU_')
+	, (N'BREED', N'ROCCO', N'GMENU_')
+	, (N'BRAND', N'ROCCO', N'GMENU_')
+	, (N'WOG_SIZE', N'ROCCO', N'GMENU_')
+	, (N'WAREHOUSE', N'ROCCO', N'GMENU_')
+	, (N'TREATMENT', N'ROCCO', N'GMENU_')
+	, (N'STATE', N'ROCCO', N'GMENU_')
+	, (N'SALESPERSON', N'ROCCO', N'GMENU_')
+	, (N'PRODUCT', N'ROCCO', N'GMENU_')
+	, (N'PROD_WHSE_ACTUAL', N'ROCCO', N'GMENU_')
+	, (N'PROD_UNIT', N'ROCCO', N'GMENU_')
+	, (N'PROD_SPEC', N'ROCCO', N'GMENU_')
+	, (N'PROD_LINE', N'ROCCO', N'GMENU_')
+	, (N'PROD_GROUP', N'ROCCO', N'GMENU_')
+	, (N'PROD_CLASS', N'ROCCO', N'GMENU_')
+	, (N'PROD_CATEGORY', N'ROCCO', N'GMENU_')
+	, (N'PRESERVATION_TYPE', N'ROCCO', N'GMENU_')
+	, (N'PLANT', N'ROCCO', N'GMENU_')
+	, (N'CONT_DISEASE', N'ROCCO', N'GMENU_')
 	, (N'Customer', N'dbo', N'SigmaGCT_')
 	, (N'OutboundOrder', N'dbo', N'SigmaGCT_')
 	, (N'OutboundOrderDetail', N'dbo', N'SigmaGCT_')
 	, (N'OutboundShipment', N'dbo', N'SigmaGCT_')
 	, (N'Product', N'dbo', N'SigmaGCT_')
+	, (N'CONCEPTCAPTAIN', N'ROCCO', N'GMENU_')
+	, (N'CORE_CODE', N'ROCCO', N'GMENU_')
+	, (N'DRIVER_CODE', N'ROCCO', N'GMENU_')
+	, (N'SETL_LOT', N'ROCCO', N'GMENU_')
+
+
+-- View data
+SELECT * FROM stage.Config_DemandGroup
+SELECT * FROM stage.Config_KillScheduleHistogram
+SELECT * FROM stage.Config_ModelParamDate
+SELECT * FROM stage.Config_PlantParameters 
+SELECT * FROM stage.Config_PlantsMap 
+SELECT * FROM stage.Config_InventoryTargets 
+SELECT * FROM stage.Config_TableSources ORDER BY SOURCE_SCHEMA, SOURCE_TBL

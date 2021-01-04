@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="f636319a-71c5-4f58-9954-41e46f7fb35a" ChangeDateTime="12/28/2020 16:18:17">
+    <Property Name="ElementName" Value="[dbo].[GMENU_SETL_LOT].[CONTRACT_CODE]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GMENU_SETL_LOT]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CONTRACT_COD" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="de62d219-ec85-4f5d-842d-89568c573a09" ChangeDateTime="12/28/2020 16:18:21">
+    <Property Name="ElementName" Value="[dbo].[GMENU_SETL_LOT].[CONTRACT_COD]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GMENU_SETL_LOT]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CONTRACT_CODE" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="fb0d61f8-f07f-49aa-b654-291128982186" ChangeDateTime="12/28/2020 16:18:27">
+    <Property Name="ElementName" Value="[dbo].[GMENU_SETL_LOT].[SOLD_DATE]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GMENU_SETL_LOT]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SOLD_DAT" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0b889475-6d44-4c1e-8f66-385db40c03eb" ChangeDateTime="12/28/2020 16:18:33">
+    <Property Name="ElementName" Value="[dbo].[GMENU_SETL_LOT].[SOLD_DAT]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GMENU_SETL_LOT]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SOLD_DATE" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="69c7385f-e00b-4628-a27a-3503e42fbe97" ChangeDateTime="12/29/2020 19:32:59">
+    <Property Name="ElementName" Value="[stage].[Config_TableSources].[DW_Timestampe]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[stage].[Config_TableSources]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DW_Timestamp" />
+  </Operation>
+</Operations>
